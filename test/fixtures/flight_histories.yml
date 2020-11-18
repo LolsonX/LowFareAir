@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: flight_histories
+#
+#  id           :integer          not null, primary key
+#  begin_date   :string
+#  class        :string
+#  dest_airport :string
+#  orig_airport :string
+#  username     :string
+#  flight_id    :string
+#
+
+one:
+  username: MyString
+  flight_id: MyString
+  orig_airport: MyString
+  dest_airport: MyString
+  begin_date: MyString
+  class: MyString
+
+two:
+  username: MyString
+  flight_id: MyString
+  orig_airport: MyString
+  dest_airport: MyString
+  begin_date: MyString
+  class: MyString

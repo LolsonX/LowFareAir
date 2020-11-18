@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: flight_availabilities
+#
+#  id                     :integer          not null, primary key
+#  business_seats_taken   :integer
+#  economy_seats_taken    :integer
+#  firstclass_seats_taken :integer
+#  flight_date            :date
+#  segment_number         :integer
+#  flight_id              :string
+#
+# Indexes
+#
+#  index_flight_availabilities_on_flight_id  (flight_id)
+#
+
+one:
+  flight: one
+  segment_number: 1
+  flight_date: 2020-11-16
+  economy_seats_taken: 1
+  business_seats_taken: 1
+  firstclass_seats_taken: 1
+
+two:
+  flight: two
+  segment_number: 1
+  flight_date: 2020-11-16
+  economy_seats_taken: 1
+  business_seats_taken: 1
+  firstclass_seats_taken: 1

@@ -1,0 +1,49 @@
+<% if city.errors.any? %>
+  <% city.errors.full_messages.each do |message| %>
+  <div class="alert alert-danger" role="alert">
+    <%= message %>
+  </div>
+  <% end %>
+<% end %>
+<%= form_with(model: city, local: true) do |form| -%>
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <div class="form-group">
+        <%= form.label :city_name, class: "font-weight-bold" %>
+        <%= form.text_field :city_name, placeholder: "Enter city_name", class: "form-control" %>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="form-group">
+        <%= form.label :country, class: "font-weight-bold" %>
+        <%= form.text_field :country, placeholder: "Enter country", class: "form-control" %>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="form-group">
+        <%= form.label :airport, class: "font-weight-bold" %>
+        <%= form.text_field :airport, placeholder: "Enter airport", class: "form-control" %>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="form-group">
+        <%= form.label :language, class: "font-weight-bold" %>
+        <%= form.text_field :language, placeholder: "Enter language", class: "form-control" %>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="form-group">
+        <%= form.label :country_iso_code, class: "font-weight-bold" %>
+        <%= form.text_field :country_iso_code, placeholder: "Enter country_iso_code", class: "form-control" %>
+      </div>
+    </li>
+  </ul>
+  <div class="card-footer">
+    <%= link_to "Cancel", city, class: 'btn btn-outline-secondary float-left' if city.persisted? %>
+    <%= link_to "Cancel", cities_path, class: 'btn btn-outline-secondary float-left' if !city.persisted? %>
+    <%= form.submit "Save", class: "btn btn-primary float-right" if city.persisted? %>
+    <%= form.submit "Create", class: "btn btn-primary float-right" if !city.persisted? %>
+  </div>
+</div>
+<% end %>

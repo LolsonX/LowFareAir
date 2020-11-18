@@ -1,0 +1,73 @@
+<% if flight.errors.any? %>
+  <% flight.errors.full_messages.each do |message| %>
+  <div class="alert alert-danger" role="alert">
+    <%= message %>
+  </div>
+  <% end %>
+<% end %>
+<%= form_with(model: flight, local: true) do |form| -%>
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <div class="form-group">
+        <%= form.label :flight_id, class: "font-weight-bold" %>
+        <%= form.text_field :flight_id, placeholder: "Enter flight_id", class: "form-control" %>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="form-group">
+        <%= form.label :segment_number, class: "font-weight-bold" %>
+        <%= form.number_field :segment_number, placeholder: "Enter segment_number", class: "form-control" %>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="form-group">
+        <%= form.label :orig_airport, class: "font-weight-bold" %>
+        <%= form.text_field :orig_airport, placeholder: "Enter orig_airport", class: "form-control" %>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="form-group">
+        <%= form.label :depart_time, class: "font-weight-bold" %>
+        <%= form.time_select :depart_time, placeholder: "Enter depart_time", class: "form-control" %>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="form-group">
+        <%= form.label :dest_airport, class: "font-weight-bold" %>
+        <%= form.text_field :dest_airport, placeholder: "Enter dest_airport", class: "form-control" %>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="form-group">
+        <%= form.label :arrive_time, class: "font-weight-bold" %>
+        <%= form.time_select :arrive_time, placeholder: "Enter arrive_time", class: "form-control" %>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="form-group">
+        <%= form.label :flying_time, class: "font-weight-bold" %>
+        <%= form.text_field :flying_time, placeholder: "Enter flying_time", class: "form-control" %>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="form-group">
+        <%= form.label :miles, class: "font-weight-bold" %>
+        <%= form.number_field :miles, placeholder: "Enter miles", class: "form-control" %>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="form-group">
+        <%= form.label :aircraft, class: "font-weight-bold" %>
+        <%= form.text_field :aircraft, placeholder: "Enter aircraft", class: "form-control" %>
+      </div>
+    </li>
+  </ul>
+  <div class="card-footer">
+    <%= link_to "Cancel", flight, class: 'btn btn-outline-secondary float-left' if flight.persisted? %>
+    <%= link_to "Cancel", flights_path, class: 'btn btn-outline-secondary float-left' if !flight.persisted? %>
+    <%= form.submit "Save", class: "btn btn-primary float-right" if flight.persisted? %>
+    <%= form.submit "Create", class: "btn btn-primary float-right" if !flight.persisted? %>
+  </div>
+</div>
+<% end %>

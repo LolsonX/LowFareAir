@@ -1,0 +1,32 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><%= link_to "Flight_histories", flight_histories_path %></li>
+  <li class="breadcrumb-item active mr-auto"><%= @flight_history.id %></li> 
+</ol>
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <p class="font-weight-bold">Username</p>
+      <p class="font-weight-normal"><%= @flight_history.username %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Flight</p>
+      <p class="font-weight-normal"><%= @flight_history.flight_id %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Orig airport</p>
+      <p class="font-weight-normal"><%= @flight_history.orig_airport %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Dest airport</p>
+      <p class="font-weight-normal"><%= @flight_history.dest_airport %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Begin date</p>
+      <p class="font-weight-normal"><%= @flight_history.begin_date %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Class</p>
+      <p class="font-weight-normal"><%= @flight_history.seat_class %></p>
+    </li>
+  </ul>
+</div>

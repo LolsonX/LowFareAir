@@ -1,0 +1,25 @@
+# == Schema Information
+#
+# Table name: cities
+#
+#  id               :integer          not null, primary key
+#  airport          :string
+#  city_name        :string
+#  country          :string
+#  country_iso_code :string
+#  language         :string
+#
+
+one:
+  city_name: MyString
+  country: MyString
+  airport: MyString
+  language: MyString
+  country_iso_code: MyString
+
+two:
+  city_name: MyString
+  country: MyString
+  airport: MyString
+  language: MyString
+  country_iso_code: MyString

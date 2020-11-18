@@ -1,0 +1,44 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><%= link_to "Flights", flights_path %></li>
+  <li class="breadcrumb-item active mr-auto"><%= @flight.id %></li> 
+</ol>
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <p class="font-weight-bold">Flight</p>
+      <p class="font-weight-normal"><%= @flight.flight_id %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Segment number</p>
+      <p class="font-weight-normal"><%= @flight.segment_number %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Orig airport</p>
+      <p class="font-weight-normal"><%= @flight.orig_airport %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Depart time</p>
+      <p class="font-weight-normal"><%= @flight.depart_time %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Dest airport</p>
+      <p class="font-weight-normal"><%= @flight.dest_airport %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Arrive time</p>
+      <p class="font-weight-normal"><%= @flight.arrive_time %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Flying time</p>
+      <p class="font-weight-normal"><%= @flight.flying_time %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Miles</p>
+      <p class="font-weight-normal"><%= @flight.miles %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Aircraft</p>
+      <p class="font-weight-normal"><%= @flight.aircraft %></p>
+    </li>
+  </ul>
+</div>

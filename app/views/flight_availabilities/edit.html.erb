@@ -1,0 +1,7 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><%= link_to "Flight_availabilities", flight_availabilities_path %></li>
+  <li class="breadcrumb-item"><%= link_to @flight_availability.id, @flight_availability %></li>
+  <li class="breadcrumb-item active">Edit</li>
+</ol>
+
+<%= render 'form', flight_availability: @flight_availability %>

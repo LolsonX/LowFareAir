@@ -1,0 +1,38 @@
+# == Schema Information
+#
+# Table name: flights
+#
+#  id             :integer          not null, primary key
+#  aircraft       :string
+#  arrive_time    :time
+#  depart_time    :time
+#  dest_airport   :string
+#  flying_time    :float
+#  meal           :string
+#  miles          :integer
+#  orig_airport   :string
+#  segment_number :integer
+#  flight_id      :string
+#
+
+one:
+  flight_id: MyString
+  segment_number: 1
+  orig_airport: MyString
+  depart_time: 2020-11-16 10:10:15
+  dest_airport: MyString
+  arrive_time: 2020-11-16 10:10:15
+  flying_time: 1.5
+  miles: 1
+  aircraft: MyString
+
+two:
+  flight_id: MyString
+  segment_number: 1
+  orig_airport: MyString
+  depart_time: 2020-11-16 10:10:15
+  dest_airport: MyString
+  arrive_time: 2020-11-16 10:10:15
+  flying_time: 1.5
+  miles: 1
+  aircraft: MyString

@@ -1,0 +1,43 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><%= link_to "Flight_availabilities", flight_availabilities_path %></li>
+  <li class="breadcrumb-item active mr-auto"><%= @flight_availability.id %></li> 
+</ol>
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <p class="font-weight-bold">Flight</p>
+      <p class="font-weight-normal"><%= @flight_availability.flight.flight_id %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Segment number</p>
+      <p class="font-weight-normal"><%= @flight_availability.segment_number %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Flight date</p>
+      <p class="font-weight-normal"><%= @flight_availability.flight_date %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Economy seats taken</p>
+      <p class="font-weight-normal"><%= @flight_availability.economy_seats_taken %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Business seats taken</p>
+      <p class="font-weight-normal"><%= @flight_availability.business_seats_taken %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">First class seats taken</p>
+      <p class="font-weight-normal"><%= @flight_availability.firstclass_seats_taken %></p>
+    </li>
+  </ul>
+  <%= form_tag(flight_histories_path, class: "form", method: :post, style: "display:flex; justify-content: flex-end") do %>
+    <label style="margin-top: auto;">Seat class: </label>&nbsp&nbsp
+    <%= select(:flight_history, :seat_class, %w[Economy Buisness First], { index: nil })%>&nbsp&nbsp
+    <%= hidden_field :flight_history, :flight_id, value: @flight_availability.flight.flight_id %>
+    <%= hidden_field :flight_history, :username, value: current_user.email %>
+    <%= hidden_field :flight_history, :orig_airport, value: @flight_availability.flight.orig_airport %>
+    <%= hidden_field :flight_history, :dest_airport, value: @flight_availability.flight.dest_airport %>
+    <%= hidden_field :flight_history, :begin_date, value: @flight_availability.flight_date %>
+    <%= hidden_field '', :flight_avail_id, value: @flight_availability.id %>
+    <%= submit_tag('Book', class: "btn btn-dark") %>
+  <% end %>
+</div>

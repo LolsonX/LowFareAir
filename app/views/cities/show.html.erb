@@ -1,0 +1,28 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><%= link_to "Cities", cities_path %></li>
+  <li class="breadcrumb-item active mr-auto"><%= @city.id %></li> 
+</ol>
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <p class="font-weight-bold">City name</p>
+      <p class="font-weight-normal"><%= @city.city_name %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Country</p>
+      <p class="font-weight-normal"><%= @city.country %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Airport</p>
+      <p class="font-weight-normal"><%= @city.airport %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Language</p>
+      <p class="font-weight-normal"><%= @city.language %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="font-weight-bold">Country iso code</p>
+      <p class="font-weight-normal"><%= @city.country_iso_code %></p>
+    </li>
+  </ul>
+</div>
