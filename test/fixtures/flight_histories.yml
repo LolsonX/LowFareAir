@@ -4,9 +4,9 @@
 #
 #  id           :integer          not null, primary key
 #  begin_date   :string
-#  class        :string
 #  dest_airport :string
 #  orig_airport :string
+#  seat_class   :string
 #  username     :string
 #  flight_id    :string
 #
