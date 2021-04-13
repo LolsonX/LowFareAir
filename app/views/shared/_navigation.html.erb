@@ -1,0 +1,12 @@
+<nav role="navigation" class="primary-navigation">
+  <ul>
+    <li><%= link_to 'Browse flights', root_path %></li>
+    <% if current_user.nil? %>
+      <li><%= link_to 'Sign up!', new_user_registration_path %></li>
+      <li><%= link_to 'Sign in', new_user_session_path %></li>
+    <% else %>
+      <li><%= link_to 'Booking history', flight_histories_path %></li>
+      <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+    <% end %>
+  </ul>
+</nav>

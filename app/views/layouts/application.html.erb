@@ -13,7 +13,12 @@
   <body>
   <%= content_for :render_async %>
   <%= render 'shared/navigation' %>
-<div class="container mt-3">
+<div style="margin: 0 ">
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+      <%= msg %>
+    </div>
+  <% end %>
 	  <%= yield %>
 </div>
 

@@ -1,0 +1,5 @@
+<%= form_tag(flight_histories_path(flight_av: params[:flight_av]), method: "post", class: 'search') do %>
+  <%= label_tag(:seat_class, "Seat Class:") %>
+  <%= select_tag(:seat_class, options_for_select(FlightHistory.seat_classes.map{|k, v| [k.capitalize, v]})) %>
+  <%= submit_tag("Book it", class: 'button') %>
+<% end %>

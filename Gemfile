@@ -59,7 +59,6 @@ group :development do
 end
 
 gem 'devise'
-gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
 gem 'devise-pwned_password'
 gem 'gravatar_image_tag'
 group :development, :test do

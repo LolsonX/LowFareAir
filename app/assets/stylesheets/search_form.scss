@@ -1,0 +1,29 @@
+$white: #fff;
+$black: #000;
+$grey: #595959;
+$grey-dark: #2b2b2b;
+$grey-light: #eee;
+$green: #86c023;
+$blue: #017ac7;
+
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 50%;
+  border-radius: 25px;
+  background-color: $grey-light;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  margin: 1%;
+  label {
+    margin: 1%;
+  }
+  .button {
+    margin: 1%;
+  }
+}

@@ -1,0 +1,22 @@
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<p>You booked a ticket!</p>
+<p>
+  Flight Details details<br>
+  --------------------------
+</p>
+<p>Email: <%= @flight_history.username %></p>
+<p>Departure Date: <%= @flight_history.begin_date %></p>
+<p>From: <%= @flight_history.orig_airport %></p>
+<p>To: <%= @flight_history.dest_airport %></p>
+<p>Class: <%= @flight_history.seat_class %></p>
+<p>Flight Id: <%=@flight_history.flight_id %></p>
+<p>
+  <br>
+  ----------
+</p>
+</body>
+</html>

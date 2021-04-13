@@ -1,0 +1,59 @@
+<div class="pagination-wrapper">
+  <%== pagy_nav(@pagy) %>
+</div>
+<div class="container">
+  <table>
+    <thead>
+    <tr>
+      <th>
+        Flight Id
+      </th>
+      <th>
+        Segment Number
+      </th>
+      <th>
+        Date
+      </th>
+      <th>
+        Business Seats Taken
+      </th>
+      <th>
+        Economy Seats Taken
+      </th>
+      <th>
+        First Class Seats Taken
+      </th>
+      <th>
+        Actions
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @records.each do |flight_av| %>
+      <tr>
+        <td>
+          <%= flight_av.flight_id %>
+        </td>
+        <td>
+          <%= flight_av.segment_number %>
+        </td>
+        <td>
+          <%= flight_av.flight_date %>
+        </td>
+        <td>
+          <%= flight_av.business_seats_taken %>
+        </td>
+        <td>
+          <%= flight_av.economy_seats_taken %>
+        </td>
+        <td>
+          <%= flight_av.firstclass_seats_taken %>
+        </td>
+        <td>
+          <%= link_to 'Book ->', new_flight_history_path(flight_av: flight_av.id), class: "button" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

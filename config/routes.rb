@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+
+  resources :flights, only: :index
+  resources :flight_availabilities, only: :index
+  resources :flight_histories, only: [:index, :new, :create]
+
+  root to: 'flights#index'
   devise_for :users
+
   match "bad-request", to: "errors#bad_request", as: "bad_request", via: :all
   match "not_authorized", to: "errors#not_authorized", as: "not_authorized", via: :all
   match "route-not-found", to: "errors#route_not_found", as: "route_not_found", via: :all

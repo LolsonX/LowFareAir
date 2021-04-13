@@ -1,0 +1,63 @@
+<div class="pagination-wrapper">
+  <%== pagy_nav(@pagy) %>
+</div>
+<div class="container">
+  <%= form_tag flights_path, method: 'GET', class: 'search' do %>
+    <%= label_tag :orig_airport %>
+    <%= select_tag :orig_airport,
+                   options_from_collection_for_select(City.all, "airport", "city_name"),
+                   include_blank: true %>
+    <%= label_tag :dest_airport %>
+    <%= select_tag :dest_airport, options_from_collection_for_select(City.all, "airport", "city_name"),
+                   include_blank: true %>
+    <%= submit_tag "Search", class: 'button' %>
+  <% end %>
+  <table>
+    <thead>
+    <tr>
+      <th>
+        From
+      </th>
+      <th>
+        To
+      </th>
+      <th>
+        Departure
+      </th>
+      <th>
+        Arrival
+      </th>
+      <th>
+        Aircraft
+      </th>
+      <th>
+        Actions
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @records.each do |flight| %>
+      <tr>
+        <td>
+          <%= "#{flight.origin_city} (#{flight.orig_airport})" %>
+        </td>
+        <td>
+          <%= "#{flight.destination_city} (#{flight.dest_airport})" %>
+        </td>
+        <td>
+          <%= flight.depart_time.strftime("%-d/%-m/%Y: %H:%M %Z") %>
+        </td>
+        <td>
+          <%= flight.arrive_time.strftime("%-d/%-m/%Y: %H:%M %Z") %>
+        </td>
+        <td>
+          <%= flight.aircraft %>
+        </td>
+        <td>
+          <%= link_to 'Check flights ->', flight_availabilities_path(flight_id: flight.flight_id), class: 'button' %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
